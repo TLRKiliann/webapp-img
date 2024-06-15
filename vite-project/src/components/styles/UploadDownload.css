@@ -28,11 +28,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    object-fit: cover;
+    object-fit: content;
     border: none;
     border-radius: 7px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    margin: 40px; 
+}
+
+.no-img {
+    color: rgba(100, 100, 100, 0.6);
 }
 
 .box-btn {
@@ -56,3 +59,9 @@ input[type="file"] {
     border-radius: 5px;
 }
 
+@media screen and (min-width: 200px) and (max-width: 800px) {
+    .img-container {
+        width: 70%;
+        height: 70%;
+    }
+}

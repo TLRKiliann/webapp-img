@@ -1,10 +1,11 @@
 import { useState } from "react";
 import "./styles/UploadDownload.css";
 
-const UploadDownload = ({resizerImg, resizeBg, colors}: {
-    resizerImg: number, 
-    resizeBg: number, 
-    colors: string}) => {
+const UploadDownload = ({ resizerImg, reformatShadowBg, colors, reformatOpacity}: {
+    resizerImg: number;
+    reformatShadowBg: number;
+    reformatOpacity: number; 
+    colors: string; }) => {
 
     const [selectedImage, setSelectedImage] = useState<File | null>(null);
 
@@ -16,8 +17,12 @@ const UploadDownload = ({resizerImg, resizeBg, colors}: {
         }
     };
 
-    const handleRemoveImage = () => {
-        setSelectedImage(null);
+    const handleRemoveImage = (event: React.MouseEvent<HTMLButtonElement>) => {
+        if (event.target && selectedImage !== null) {
+            setSelectedImage(null);
+        } else {
+            alert("No img to remove !");
+        }
     };
 
     const downloadImage = () => {
@@ -29,7 +34,7 @@ const UploadDownload = ({resizerImg, resizeBg, colors}: {
             link.click();
             document.body.removeChild(link);
         } else {
-            console.log("No img to download !");
+            alert("No img to download !");
         }
     };
 
@@ -46,13 +51,13 @@ const UploadDownload = ({resizerImg, resizeBg, colors}: {
                             width={resizerImg}
                             src={URL.createObjectURL(selectedImage)}
                             style={{filter: `drop-shadow(10px 
-                                10px ${resizeBg}px rgba(10, 10, 10, 0.8))`}}
+                                10px ${reformatShadowBg}px rgba(10, 10, 10, ${reformatOpacity}))`}}
                         />
                     </div>
                 </div>
             ) : (
                 <div className='img-container'>
-                    <p>No img selected !</p>
+                    <p className="no-img">No img selected !</p>
                 </div>
            )}
 

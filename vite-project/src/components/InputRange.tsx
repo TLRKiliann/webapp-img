@@ -3,21 +3,20 @@ import './styles/InputRange.css';
 
 type IntputRangeProps = {
     sizeRange: string;
-    bgRange: string | undefined;
+    bgRange: string;
+    opacityBg: string;
     colors: string;
     handleSize: (event: React.ChangeEvent<HTMLInputElement>) => void;
     handleBgRange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    handleOpacityBg: (event: React.ChangeEvent<HTMLInputElement>) => void;
     handleChangeColor: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export default function InputRange({
-    colors,
-    sizeRange,
-    bgRange,
+export default function InputRange({ colors, sizeRange, bgRange, opacityBg,
     handleSize,
     handleBgRange,
-    handleChangeColor
-}: IntputRangeProps) {    
+    handleOpacityBg,
+    handleChangeColor }: IntputRangeProps) {    
     return (
         <div className='range-container'>
 
@@ -47,6 +46,20 @@ export default function InputRange({
                 
             </div>
             
+            <hr className='hr-tag' />
+
+            <div className='lbl-input'>
+
+                <label htmlFor="opacitybg">Opacity</label>
+                <input 
+                    type="range" id="opacitybg" name="opacitybg"
+                    value={opacityBg} onChange={(event) => handleOpacityBg(event)}
+                    min="0" max="100" step="1" 
+                />
+                <p>{opacityBg}%</p>
+                
+            </div>
+
             <hr className='hr-tag' />
 
             <div className='lbl-input-color'>
