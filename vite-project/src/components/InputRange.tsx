@@ -32,18 +32,22 @@ export default function InputRange({
                 <p>{sizeRange}%</p>
 
             </div>
+            
+            <hr className='hr-tag' />
 
             <div className='lbl-input'>
 
-                <label htmlFor="imgrange">Background</label>
+                <label htmlFor="imgbackground">Background</label>
                 <input 
-                    type="range" id="imgrange" name="imgrange"
+                    type="range" id="imgbackground" name="imgbackground"
                     value={bgRange} onChange={(event) => handleBgRange(event)}
                     min="0" max="100" step="1" 
                 />
                 <p>{bgRange}%</p>
                 
             </div>
+            
+            <hr className='hr-tag' />
 
             <div className='lbl-input-color'>
                 <label htmlFor="imgcolor">Color Image</label>

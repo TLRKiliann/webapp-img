@@ -1,4 +1,9 @@
 #root {
+  width: 100vw;
+  height: auto;
+}
+
+body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -10,7 +15,6 @@
 }
 
 .div-container {
+  width: 100%;
   display: flex;
-
-  border: 1px solid blue;
 }

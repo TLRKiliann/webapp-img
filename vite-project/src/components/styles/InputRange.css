@@ -1,5 +1,5 @@
 .range-container {
-    width: 30%;
+    width: 35%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -7,40 +7,39 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.div-img {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 800px;
-    height: 400px;
-    object-fit: contain;
-
-    border: 1px solid cyan;
-}
-
 .lbl-input {
     width: 80%;
     display: flex;
     flex-direction: column;
     padding: 10px;
+}
 
-    border: 1px solid sandybrown;
+.hr-tag {
+    width: 80%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .lbl-input label {
     font-size: 1.0rem;
     font-weight: 600;
-    margin-bottom: 16px;
+    margin-bottom: 5px;
+}
+
+.lbl-input input[type="range"] {
+    accent-color: #535bf2;
 }
 
 .lbl-input p {
     text-align: center;
     font-size: 1.1rem;
     font-weight: 500;
-    background: rgba(0, 200, 200, 0.2);
-    border: 1px solid rgba(0, 200, 200, 0.2);
+    color: #444;
+    background: rgba(83, 91, 242, 0.2);
+    border: 1px solid rgba(83, 91, 242, 0.2);
     border-radius: 5px;
     padding: 3px 0px;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 .lbl-input-color {
@@ -48,13 +47,13 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: start;
+    margin-top: 5px;
     padding: 10px;
 
-    border: 1px solid sandybrown;
 }
 .lbl-input-color label {
     font-size: 1.0rem;
     font-weight: 600;
-    margin-right: 20px;
+    margin-right: 10px;
 }

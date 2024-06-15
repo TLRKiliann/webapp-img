@@ -1,27 +1,29 @@
 .upload-download-container {
-    width: 70%;
+    width: 65%;
     height: 85vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-    border: 1px solid sandybrown;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .img-container {
-    width: 500px;
-    height: 500px;
+    width: 50%;
+    height: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid silver;
+    border: 1px solid rgba(100, 100, 100, 0.2);
     border-radius: 7px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10%;
 }
 
 .img-box {
-    width: 340px;
-    height: 340px;
+    width: 80%;
+    height: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -37,22 +39,20 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    border: 1px solid lime;
+    background: #ededed;
+    border:none;
+    border-radius: 7px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px 20px;
 }
 
 .box-btn button {
-    margin: 10px;
-}
-
-.div-browser-input {
-    border: 1px solid lime;
+    margin-left: 20px;
 }
 
 input[type="file"] {
-    background: rgba(0, 200, 200, 0.2);
-    border: 1px solid rgba(0, 200, 200, 0.2);
+    background: rgba(83, 91, 242, 0.2);
+    border: 1px solid rgba(83, 91, 242, 0.2);
+    border-radius: 5px;
 }
 
-a {
-    background: blue;
-}

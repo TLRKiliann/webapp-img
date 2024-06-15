@@ -23,7 +23,6 @@ const UploadDownload = ({resizerImg, resizeBg, colors}: {
     const downloadImage = () => {
         if (selectedImage) {
             const link = document.createElement("a");
-
             link.href = URL.createObjectURL(selectedImage);
             link.download = selectedImage.name;
             document.body.appendChild(link);
@@ -53,6 +52,7 @@ const UploadDownload = ({resizerImg, resizeBg, colors}: {
                 </div>
             ) : (
                 <div className='img-container'>
+                    <p>No img selected !</p>
                 </div>
            )}
 
@@ -69,9 +69,6 @@ const UploadDownload = ({resizerImg, resizeBg, colors}: {
 
             <br />
 
-            <div className="div-browser-input">
-                
-            </div>
         </div>
     );
 };
