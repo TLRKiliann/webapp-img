@@ -1,34 +1,52 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import InputRange from './components/InputRange';
+import UploadDownload from './components/UploadDownload';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [sizeRange, setSizeRange] = useState<string>("50");
+  const [bgRange, setBgRange] = useState<string | undefined>("50");
+  const [colors, setColors] = useState<string>("#f5f5f5");
+
+  // convert to number
+  const resizerImg: number = Number(sizeRange) * 3;
+  const resizeBg: number = Number(bgRange) / 2;
+
+  const handleSize = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSizeRange(event.target.value);
+  };
+
+  const handleBgRange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setBgRange(event.target.value);
+  };
+
+  const handleChangeColor = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setColors(event.target.value);
+  };
 
   return (
-    <>
+    <div className='main-div'>
+
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <h1>Upload and Display Image</h1>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+
+      <div className='div-container'>
+        <InputRange sizeRange={sizeRange}
+          bgRange={bgRange} 
+          handleSize={handleSize}
+          colors={colors}
+          handleBgRange={handleBgRange}
+          handleChangeColor={handleChangeColor}
+        />  
+        <UploadDownload 
+          resizerImg={resizerImg} 
+          resizeBg={resizeBg} 
+          colors={colors}
+        />
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+
+    </div>
   )
 }
 
